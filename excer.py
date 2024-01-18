@@ -1,12 +1,15 @@
 M = 2023
 
 def compute(n):
-    s = ""
-    for i in range(1, n + 1):
-        s += str(n)
-    return int(s) % M
+  residuo = n % M
+  s = ''
+  for i in range(residuo):
+    s = s + str(residuo)
+    mod = int(s) % M
+  return int(mod)
 
-n = 10
-resultado = compute(n)
+numbers = [1, 2, 5, 10, 20, 827785024886475841]
 
-print(resultado)
+for num in numbers:
+    result = compute(num)
+    print(f"{num}: {result}")
